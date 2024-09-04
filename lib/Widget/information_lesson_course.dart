@@ -35,39 +35,3 @@ class InformationLessonCourse extends StatelessWidget {
 
 
 
-/*Widget InformationLessonCourse(
- // TextButton text2,
- String title,
-  String subtitle,){
-  return Container(
-  width: 328,
-  height: 160,
-    color: Color(0xffFBF1E3),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Column(children: [
-       //   text2
-        ],),
-          
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Text(title),
-                    Text(subtitle),
-                  ]
-                ),
-              ),
-            ],
-          ),
-    
-    
-      ]
-    ),
-  );
-}*/
