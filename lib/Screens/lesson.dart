@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:online_courses/Screens/home_page.dart';
+import 'package:online_courses/Theme/colors.dart';
+import 'package:online_courses/Theme/fontstyle.dart';
+import 'package:online_courses/Widget/button_style.dart';
+import 'package:online_courses/Widget/information_lesson_course.dart';
 
 class LessonsScreen extends StatefulWidget {
   const LessonsScreen({super.key});
@@ -24,63 +28,88 @@ class _LessonsScreenState extends State<LessonsScreen> {
                 width: MediaQuery.of(context).size.width,
                 height: 50,
                 color: Colors.white,
-                child: const Row(
+                child: Row(
                   children: [
-                    Icon(
-                      (Icons.arrow_back_ios),
-                      size: 24,
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const OnlineCoursesScreen(),
+                        ));
+                      },
+                      child: const Icon(
+                        (Icons.arrow_back_ios),
+                        size: 24,
+                      ),
                     ),
                     Text('Lessons',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xff525F7F),
-                        )),
+                      style: fontweghit500,
+                    ),
                   ],
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 50),
-                height: 200,
-                decoration: BoxDecoration(
-                  color: const Color(0xff466CFF),
-                  borderRadius: BorderRadius.circular(20),
+              Stack(alignment: Alignment.topRight, children: [
+                InformationLessonCourse(
+                  'スタート',
+                  'Basic Grammers',
+                  onPressed: () {},
+                  text2: 'Basic Grammers',
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          textAlign: TextAlign.center,
-                          'スタート',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
+                Container(
+                  
+                  padding: const EdgeInsets.only(right: 10, top: 10),
+                  //  color: bluedark,
+                  child: buttonstyle(
+                    '01/30',
+                    () {},
+                    bluedark,
+                  ),
+                )
+              ]),
+              
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 80,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: circlecolor,
                         ),
-                        Text(
-                          textAlign: TextAlign.center,
-                          'Basic Grammers',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        child: const Icon(
+                          size: 30,
+                          color: iconcheck,
+                          Icons.check,
                         ),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      child: Stack(children: [
-                        Image.asset('assets/images/Intersect.png'),
-                      ]),
-                    ),
-                  ],
-                ),
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Basic Grammers',
+                            style: fontstyle16
+                          ),
+                          Text(
+                            'Learning Basic Drawing letters',
+                            style: fontweghit400,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Icon(
+                    Icons.arrow_forward_ios,
+                    color: iconcolor
+                  )
+                ],
               ),
               const SizedBox(
                 height: 20,
@@ -89,57 +118,6 @@ class _LessonsScreenState extends State<LessonsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                   // mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 80,
-                        height: 80,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color.fromARGB(255, 183, 238, 211),
-                        ),
-                        child: const Icon(
-                          color: Color(0xff59D79A),
-                          Icons.check,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      const Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Basic Grammers',
-                            style: TextStyle(
-                              color: Color(0xff525F7F),
-                              fontSize: 20,
-                            ),
-                          ),
-                          Text(
-                            'Learning Basic Drawing letters',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xffA1B2CF),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xffBCC4E2),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
@@ -147,29 +125,22 @@ class _LessonsScreenState extends State<LessonsScreen> {
                         height: 80,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xffEEF0F7),
+                          color: linercolor,
                         ),
                       ),
                       const SizedBox(
                         width: 15,
                       ),
-                      const Column(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             'Create your phrase',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xff525F7F),
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: fontstyle16
                           ),
                           Text(
                             'Learning Basic Drawing letters',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff525F7F),
-                            ),
+                              style: fontweghit400
                           ),
                         ],
                       ),
@@ -177,11 +148,11 @@ class _LessonsScreenState extends State<LessonsScreen> {
                   ),
                   const Icon(
                     Icons.arrow_forward_ios,
-                    color: Color(0xffBCC4E2),
+                    color: iconcolor,
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -195,29 +166,22 @@ class _LessonsScreenState extends State<LessonsScreen> {
                         height: 80,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xffEEF0F7),
+                          color: linercolor,
                         ),
                       ),
                       const SizedBox(
                         width: 15,
                       ),
-                      const Column(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             'Introduce yourself',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xff525F7F),
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: fontstyle16
                           ),
                           Text(
                             'Learning Basic Drawing letters',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff525F7F),
-                            ),
+                              style: fontweghit400
                           ),
                         ],
                       ),
@@ -225,11 +189,11 @@ class _LessonsScreenState extends State<LessonsScreen> {
                   ),
                   const Icon(
                     Icons.arrow_forward_ios,
-                    color: Color(0xffBCC4E2),
+                    color: iconcolor
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -243,29 +207,22 @@ class _LessonsScreenState extends State<LessonsScreen> {
                         height: 80,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xffEEF0F7),
+                          color: linercolor,
                         ),
                       ),
                       const SizedBox(
                         width: 15,
                       ),
-                      const Column(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             'First basics words',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xff525F7F),
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: fontstyle16
                           ),
                           Text(
                             'Learning Basic Drawing letters',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff525F7F),
-                            ),
+                              style: fontweghit400
                           ),
                         ],
                       ),
@@ -273,7 +230,7 @@ class _LessonsScreenState extends State<LessonsScreen> {
                   ),
                   const Icon(
                     Icons.arrow_forward_ios,
-                    color: Color(0xffBCC4E2),
+                    color: iconcolor,
                   )
                 ],
               ),
@@ -284,3 +241,9 @@ class _LessonsScreenState extends State<LessonsScreen> {
     );
   }
 }
+
+
+
+
+
+

@@ -1,7 +1,9 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_container
 import 'package:flutter/material.dart';
+import 'package:online_courses/Theme/colors.dart';
 import 'package:online_courses/Widget/bottom_navigation_bar.dart';
-import 'package:online_courses/Widget/information_lesson_course.dart';
+import 'package:online_courses/Widget/button_style.dart';
+import 'package:online_courses/Widget/container_main_lesson.dart';
 import 'package:online_courses/Widget/lesson_title_course.dart';
 import 'package:online_courses/Widget/text_form_field_search.dart';
 
@@ -32,52 +34,55 @@ class OnlineCoursesScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Row(
+            Stack(
+              alignment: Alignment.topRight,
               children: [
+                MainContainerInformation('スタート', 'Basic Grammers',
+                    color: bluedark, onPressed: () {}, text2: 'Continue'),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.96,
-                  height: 200,
-                  decoration: BoxDecoration(
-                      color: const Color(0xff686BFF),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: InformationLessonCourse(
-                    'スタート',
-                    'Basic Grammers',
-                    text2: 'Continue',
-                    onPressed: () {},
-                  ),
-                ),
+                  padding: const EdgeInsets.only(right: 10, top: 10),
+                  child: buttonstyle('01/30', () {}, purplelight),
+                )
               ],
             ),
             const SizedBox(
               height: 20,
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.96,
-              height: 200,
-              decoration: BoxDecoration(
-                color: const Color(0xff686BFF),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: InformationLessonCourse(
-                'スタート',
-                'Fishing Talk',
-                onPressed: () {},
-                text2: 'Start',
-              ),
+            Stack(
+              alignment: Alignment.topRight,
+              children: [
+                MainContainerInformation(
+                  'フィッシング',
+                  'Fishing Talk',
+                  color: bluelight,
+                  onPressed: () {},
+                  text2: 'Start',
+                ),
+                Container(
+                  padding: const EdgeInsets.only(right: 10, top: 10),
+                  child: buttonstyle('0/30', () {}, bluelight),
+                )
+              ],
             ),
             const SizedBox(
               height: 20,
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.96,
-              height: 160,
-              decoration: BoxDecoration(
-                color: const Color(0xffEE97BC),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: InformationLessonCourse('スタート', 'Basic Grammers',
-                  onPressed: () {}, text2: 'Start'),
+            Stack(
+              alignment: Alignment.topRight,
+              children: [
+                MainContainerInformation('スタート', 'Basic Grammers',
+                    color: pink, onPressed: () {}, text2: 'Continue'),
+                Container(
+                  padding: const EdgeInsets.only(
+                    right: 10,
+                    top: 10,
+                  ),
+                  child: buttonstyle('0/30', () {}, pink),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
             ),
             const SizedBox(
               height: 20,
@@ -89,5 +94,3 @@ class OnlineCoursesScreen extends StatelessWidget {
     ));
   }
 }
-
-

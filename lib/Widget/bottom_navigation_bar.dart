@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_courses/Screens/lesson.dart';
+import 'package:online_courses/Theme/colors.dart';
 
 class BottomNavigationBars extends StatelessWidget {
   const BottomNavigationBars({super.key});
@@ -7,7 +8,7 @@ class BottomNavigationBars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-        selectedItemColor: const Color(0xff5C657C),
+        selectedItemColor: selectedItemColor, 
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: InkWell(
@@ -28,7 +29,7 @@ class BottomNavigationBars extends StatelessWidget {
                     children: [
                       Icon(
                           size: 30,
-                          color: Color(0xff5B37B7),
+                          color: homeiconcolor,
                           Icons.home_outlined),
                       SizedBox(
                         width: 10,
@@ -36,7 +37,7 @@ class BottomNavigationBars extends StatelessWidget {
                       Text(
                         'Lessons',
                         style: TextStyle(
-                            color: Color(0xff5B37B7),
+                            color: homeiconcolor,
                             fontWeight: FontWeight.bold),
                       )
                     ],
@@ -49,13 +50,13 @@ class BottomNavigationBars extends StatelessWidget {
           const BottomNavigationBarItem(
               icon: Icon(
                 size: 30,
-                color: Color(0xff5C657C),
+                color: selectedItemColor,
                 Icons.search_sharp,
               ),
               label: ''),
           const BottomNavigationBarItem(
-              icon: Icon(color: Color(0xff5C657C), Icons.person_4_outlined),
-              label: ''),
+              icon: Icon(color: personicon, Icons.person_4_outlined),
+              label: 'あ'),
         ]);
   }
 }

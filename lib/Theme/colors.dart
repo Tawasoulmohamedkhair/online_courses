@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+const purpledark = Color(0xff525F7F);
+const fontpurplelight = Color(0xff98A3C7);
+const ellipsecolor = Color(0xffFBF1E3);
+const purplelight = Color(0xffA7A2FC);
+const bluedark = Color(0xff686BFF);
+const bluelight = Color(0xff466CFF);
+const pink = Color(0xffEE97BC);
+const linercolor = Color(0xffEEF0F7);
+const circlecolor = Color(0xffCDF7E3);
+const circlelightcolor = Color(0xffEEF0F7);
+const iconcolor = Color(0xffBCC4E2);
+const selectedItemColor = Color(0xff5C657C);
+const homeiconcolor = Color(0xff5B37B7);
+const personicon = Color(0xff5C657C);
+const iconcheck = Color(0xff59D79A);
+const textformfiel = Color(0xff8193AB);
+const subtitle = Color(0xffA1B2CF);
+const progresstext = Color(0xff98A3C7);
+const continuecolor = Color(0xff444089);
