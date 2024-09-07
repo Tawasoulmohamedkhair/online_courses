@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:online_courses/Screens/home_page.dart';
-import 'package:online_courses/Screens/train.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const OnlineCoursesScreen(),
-      // home:Train(),
     );
   }
 }
