@@ -19,3 +19,4 @@ const textformfiel = Color(0xff8193AB);
 const subtitle = Color(0xffA1B2CF);
 const progresstext = Color(0xff98A3C7);
 const continuecolor = Color(0xff444089);
+const stackcontainer = Color(0xff625CBC);

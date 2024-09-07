@@ -17,9 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      // home: const OnlineCoursesScreen(),
-    // home: const LessonsScreen(),
-      home: ContainerShape(),
+      home: const OnlineCoursesScreen(),
+      // home:Train(),
     );
   }
 }
